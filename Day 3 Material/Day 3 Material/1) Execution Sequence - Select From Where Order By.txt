@@ -1,0 +1,4 @@
+1) from
+2) where
+3) select
+4) order by

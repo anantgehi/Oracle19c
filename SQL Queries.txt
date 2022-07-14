@@ -1,0 +1,31 @@
+Enter user-name: conn / as sysdba
+Enter password:
+show user;
+alter session set "_ORACLE_SCRIPT"=true;
+create user Scott Identified by tiger;
+conn Scott/tiger
+grant create session, resource to Scott;
+create table t1(a int);
+conn / as sysdba;
+alter user Scott quota unlimited on Users;
+conn Scott/tiger
+insert into t1 values(1);
+@c:\demobld.sql
+@c:\Other_demotables.sql
+show history;
+set history on;
+history;
+select * from emp;
+select * from dept;
+ed
+/
+cle scr
+select * from emp where sal>45000;
+-- single line comment
+/* multi line comment */
+select * from emp where sal >= 3000;
+select * from emp where sal > 3000;
+select * from emp where ename = 'Smith'; -- no records
+select * from emp where ename = 'SMITH'; -- 1 record
+select * from emp where lower(ename) = 'smith'; -- lower function is ANSI SQL
+select * from emp where Initcap(ename) = 'Smith'; -- initcap is oracle prop

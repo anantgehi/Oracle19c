@@ -1,0 +1,181 @@
+Topic 1: Introduction to RDBMS & Database:
+
+Databases which are based on RDBMS differ on:
+1) Architecture
+2) Volume of data getting stored & handled
+3) Concurrent user support 
+4) User Creation & Privileges Management
+5) Date Functions
+**6) Programmability features (PL/SQL) & Syntax
+7) Transaction Management features
+8) Indexes
+9) Tuning of Databases
+10) Proprietory SQL Syntax and features
+
+Common Features of Database which are based on RDBMS:
+1) RDBMS Concepts or Framework -- PK, FK, UK, NN, Check Constraint
+2) ANSI SQL Syntax and features
+3) Basic concepts of Database Programmability (not syntax)
+
+Objectives of Any RDBMS Database:
+1) Storage -- Physical & Logical
+*****2) Retrieval -- SQL Select
+3) Permissions on Data
+
+Physical & Logical Storage?
+
+Example: Customer is the table. This is the Logical Layer.
+Every Database Table is Mapped to a physical file stored in the hard disk.
+
+In Oracle Employee is the table created by Oracle user Scott.
+There is a .dbf file stored in the C:\Ora_Home\Data\Main123.dbf
+
+Employee Table's data resides in the Main123.dbf file.
+
+Main123.dbf file is the Physical Layer.
+
+Initially Main123.dbf was having 50 GB space.
+Auto Increase can be made ON  for the file. 25%, 35%
+
+---------------------------------
+
+Topic 2: Introduction to Oracle 
+Timeline or Versions of Oracle Database Server:
+1) 7.x
+2) 8.0
+3) 8i
+4) 9i
+5) 10g
+6) 11g
+7) 12c
+8) 17c
+9) 19c
+
+Oracle Editors:
+1) SQL Plus -- Command Line Editor, Default Editor
+2) SQL Developer -- GUI, To be installed separatly
+
+---------------------------------
+
+Topic 3: Installing Oracle & SQL Developer
+
+---------------------------------
+
+Topic 4: Data integrity rules:
+a) Composite Keys
+b) Unique key
+c) Not Null
+d) Check
+e) Combination of Constraints
+
+---------------------------------
+
+Topic 5: Oracle Database and Users
+
+The name of the Default Database is orcl, which can be changed.
+
+
+Every Oracle database has 2 types of Users.
+1) DBA user
+2) Non DBA user
+
+1) DBA user : Sys and System are the default DBA users
+2) Non DBA user : Explicitly are created by DBA
+Traditionally Scott is the Non DBA user with password tiger
+
+---------------------------------
+
+Topic 6: Intro to SQL
+4GL.
+
+SQL Types:
+1) ANSI SQL 85%
+2) Proprietory SQL 15%
+
+SQL Command types:
+1) DDL: Create, Alter, Modify, Drop, Rename
+2) DML: Insert, Update, Delete, Merge
+*3) DQL or DRL: Select......
+------
+4) DCL: Grant, Revoke
+5) TCL: Commit, Rollback, Savepoint, Locks
+
+
+---------------------------------
+
+Topic 7: Normalization
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

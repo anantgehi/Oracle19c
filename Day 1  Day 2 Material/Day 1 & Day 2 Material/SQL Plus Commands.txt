@@ -1,0 +1,5 @@
+set linesize 100
+set pagesize 100
+ed                  (ed stands for edit)
+cle scr
+

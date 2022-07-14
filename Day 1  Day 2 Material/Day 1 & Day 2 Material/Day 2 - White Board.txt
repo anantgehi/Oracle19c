@@ -1,0 +1,117 @@
+Topic 1: Setting Oracle Environment
+a) Oracle User Creation using SQL Plus
+b) Table SQL Scripts Execution
+c) Configuring SQL Developer
+
+-------------------------------------------
+
+Topic 2: Oracle SQL Starts ....
+
+1) Basic Select Statements Overview:
+
+Executing a Select Statement results in either:
+Error Situation 
+or 
+No Error Situation.
+
+Error Situation:
+a) Syntax Error
+b) Object not found error (Solution -- Query Data Dictionary Tables / Views)
+c) Privilege Error
+d) Network Error
+e) Database or Tablespace Offline
+f) Server not running
+Solution for c to f : Consult DBA
+
+No Error Situation:
+Output may come: Zero or One or Multiple Rows may come
+
+There are always 2 types of Outputs:
+1) Logically Correct Output:
+Can be of Zero or One or Multiple Rows may come
+2) Logically Wrong Output:
+Can be of Zero or One or Multiple Rows may come
+
+SQL Functions:
+1) Single Row Functions
+2) Multi Row Functions Or Aggregate Functions
+
+1) Single Row Functions
+a) String  (Some of them are ANSI)
+b) Numeric  (Some of them are ANSI)
+c) Date (Always Database Specific)
+d) Conditional (Some of them are ANSI)
+e) Null Handling  (Some of them are ANSI)
+f) Type Casting (Always Database Specific)
+
+
+-----------------------
+
+Case Function in SQL:
+It is ANSI SQL
+It can be used in 2 ways:
+a) Switch Case
+b) If ... Else if ... Else
+
+Example of Case acting as Switch Case:
+Select Ename, Job, Case Job
+				When 'CLERK' Then 100
+				When 'MANAGER' Then 200
+				When 'ANALYST' Then 300
+				Else
+				0
+		    End as "Points"
+From Emp
+
+Example of Case acting as If ... Else if ... Else:
+Select Ename, Sal, Case
+			When Sal > 2000 Then 'Very High'
+			When Sal > 1500 Then 'High'
+			When Sal > 1000 Then 'Medium'
+			else
+			'Low'
+		   End as "Salary Class"
+From Emp
+
+Select Ename, Sal, Case
+			When Sal >= 5000 Then 10000
+			When Sal Between 2000 and 4999 Then 8000
+			When Sal Between 1000 and 1999 Then 'No Bonus'
+			When Sal Between 800 and 999 Then 6000
+		  End as "Bonus"
+From Emp  -- Error
+
+--------------------
+
+Date Functions:
+
+
+
+
+				   
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

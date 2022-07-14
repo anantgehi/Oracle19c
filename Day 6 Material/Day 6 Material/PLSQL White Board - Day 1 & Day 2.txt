@@ -1,0 +1,412 @@
+PLSQL White Board:
+
+PLSQL is proprietory to Oracle.
+
+Features of PL/SQL Or Why PL/SQL:
+1) It gives programmability in database, can do complex validations.
+2) It can handle the run time errors.
+3) It gives the ability to create User Defined Functions (UDFs)
+4) It gives the mechanism of fetching & processing one row at a time. (Cursor)
+***** 5) It gives the ability to create procedure aka Stored procedure (SP)
+6) It gives the ability to create Triggers.
+7) It gives the ability to create Packages.
+8) It gives the ability to create User Defined Data Types which can be composite and also can have collections.
+9) It can programmatically do Export/Import, send emails, schedule jobs, etc.
+
+-------------------------
+
+PLSQL Block Type:
+Block is piece of code.
+1) Anonymous Block
+2) Named Block
+
+1) Anonymous Block:
+a) They are client session specific.
+b) Always get compiled and then executed
+c) Cannot accept parameters
+d) NOT getting stored in Database.
+e) Cannot achieve reusability of code.
+
+2) Named Block:
+a) Stored in Database.
+b) Stored in compiled format.
+c) Can accept parameters
+d) Highly reusable.
+Examples -- Stored Procedures, Functions, Triggers, Packages.
+
+-------------------------
+
+Parts or Structure of Anonymous Block:
+
+Declare
+		Variables, Cursors, 
+		Exceptions & Types declaration
+
+Begin
+		Actual Code Area aka Executable Section
+		-------
+		-------
+		-------
+
+		Exception
+				Code for handling run time errors.
+				-------
+				-------
+				-------
+End;
+
+
+-------------------------
+
+Output Statement in PLSQL:
+There is a "Oracle Supplied Package" known as DBMS_Output.
+It has one of the procedure known as Put_Line.
+
+So, the Output Statement will be DBMS_Output.Put_Line('String');
+
+-------------------------
+
+Types of Attributes to data types:
+1) %Type
+2) %RowType
+
+1) %Type: It is "Scalar" Attribute.
+It will map to the data type and size of ONE column.
+TableName.ColumnName%Type;
+
+2) %RowType: It is "Composite" Attribute.
+It will map to the data types and size of ALL the columns of that table!
+ONE Variable will be mapped to all the columns of that table! But of ONE row only.
+TableName%RowType;
+
+-------------------------
+
+
+Conditional Statements in PL/SQL:
+1) Case ... End Case;
+2) If .... ElsIf ..... Else ...... End If;
+
+-------------------------
+
+Loops:
+1) Basic Loop
+2) While Loop
+*****3) For Loop
+
+
+Loop
+
+-----
+-----
+
+
+End Loop;
+
+
+To terminate the loop use either of the 2 ways:
+1) Exit When Boolean Condition;
+
+
+OR
+
+2)  If Boolean Condition Then
+	Exit;
+    End If;
+-------------------------------------------------
+
+PLSQL For Loop Features:
+
+1) We do not have to declare the counter variable of For Loop. It is declared & managed by For Loop itself!!
+
+2) Developer cannot increment or decrement counter variable till 19c!!!!!!!!!
+For Loop will manage by incrementing or decrementing by "1" only.
+
+3) No need of Exit statement to terminate the loop.
+
+4) The For Loop variable is NOT accessible outside the loop.
+
+5) For Loop can iterate through rows of an Sub Query.
+
+6) FOR LOOP CAN NEVER GO IN THE INFINITE LOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+7) For Loop is more optimized as compared to Basic and While loops.
+
+8) Code becomes small and compact.
+
+-------------------------------------------------
+
+
+Exception Handling:
+
+There are 3 types of errors:
+A] Compilation Errors
+	1) Syntactical Errors 
+	2) Object Not Found 
+	3) Permission Denied on Object 
+	4) Network or Server related errors
+
+B] Logical Errors
+
+C] Run-Time Errors aka Exceptions:
+	Results in abnormal termination of the program.
+	System Error Message
+	What should be done when error comes is NOT known.
+
+In PLSQL there are 2 types of Exceptions:
+1) Pre Defined or System Defined
+2) User Defined
+
+SQLCode: Returns the error number
+SQLERRM : Returns the error message
+
+User Defined Exceptions: Useful to transfer control in the Exception block when any business condition is violated.
+
+RAISE_application_error:
+
+-------------------------------------------------
+
+Cursors: Cursor is a mechanism in PLSQL which enables to process "one row at a time".
+
+There are 2 types of Cursors:
+1) Implicit 
+2) Explicit
+
+1) Implicit -- Always associated with an "SQL Statement".
+
+2) Explicit -- Created by PLSQL Developer.
+
+Cursor: It is a Named Area of a "Client's Session or Anonymous Block".
+
+
+Cursors are either Anonymous Block Specific 
+OR 
+They are Session Specific (when inside Package)
+
+Cursor Mechanism used with Basic Loop or While Loop:
+
+Declare Block:
+	Step 1: Declare the cursor. (Mention the Select Statement, aka Active Set)
+
+	Step 2: Declare a Variable of Cursor Type. 
+		Declare other variables if required.
+
+Begin or Executable Block:
+	Step 3: Open the cursor. Means memory allocation will happen. That means rows 	are copied in the named memory area.
+
+	Step 4: Inside a Loop
+		a) Fetch the first row.
+		b) Process it.
+		c) Fetch next row.
+		d) Process it.
+		e) Steps c and d will be done till the last row is fetched & 		                   processed.
+
+	Step 5: Close the Cursor. Means memory deallocation will happen.T hat means 	                rows are removed from the named memory area.
+
+Attributes of a Cursor:
+1) %IsOpen
+
+2) %RowCount
+
+3) %NotFound  (Used in Loops to come out of the loop)
+
+4) %Found  (Used in Loops to come out of the loop)
+
+----------------------------
+
+Features of Named Blocks:
+1) Code resides in database as a object. Object means procedure, function, package and trigger.
+
+2) Code by default is "Secured".
+
+3) Suppose that object gets dropped or tampered then the DBA has to recover it.
+
+4) Code Backup is configured by DBA.
+
+5) Reusability. 
+
+**6) Code is compiled only ONCE and gets executed multiple times.
+
+7) Can accept parameters
+
+---------------------------------
+
+Stored Procedures:
+
+1) All SQL statements are saved in "pre-compiled" format. It will boost the performance.
+2) Can have all types of SQL statements most importantly along with code, i.e. business logic.
+
+Procedure can be called in 2 ways:
+1) Independently by mentioning Execute ProcedureName
+
+Or
+
+2) Inside an PLSQL block by mentioning only ProcedureName;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

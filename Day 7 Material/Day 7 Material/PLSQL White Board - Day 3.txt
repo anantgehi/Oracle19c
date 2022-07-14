@@ -1,0 +1,250 @@
+1) Procedures Continued ......
+
+Local Variables in Procedure
+
+Parameters in Procedure:
+There are 3 modes of Parameters:
+a) In  (Default)
+b) Out
+c) In Out
+
+Parameters can be passed by 2 ways:
+a) Positional Notation: Means mention actual values
+b) Named Notation: Means mention parameter name, then  => and then mention the value
+
+Out Mode Parameter:
+Procedure can return value to an Out Mode Parameter.
+
+We need to mention an "Variable" at the position of Out Mode Parameter 
+or In Out Mode Parameter.
+
+That Variale can be:
+a) Local variable of PLSQL Block
+ or
+b) A "Session Variable" or aka "Bind Variable".
+
+In Out Mode Parameter:
+
+Sub procedure:
+
+--------------------------
+
+
+PLSQL records:
+
+%Type attribute maps to one column
+E.g. v_sal Emp.Sal%Type
+
+%RowType attribute maps to the enire row, that means all the columns
+Rec  Emp%RowType
+
+PLSQL record: It is a user defined composite data type made up of multiple attributes.
+
+--------------------------
+
+Dynamic SQL:
+
+From Execution point of view SQL statements of 2 types:
+1) Static SQL
+2) Dynamic SQL
+
+1) Static SQL: The structure of SQL statement is known compile time and that structure gets compiled also at compile time only.
+E.g.
+Begin
+	Delete From Emp where job = 'CLERK';
+End;
+
+create or replace procedure p1(pjob varchar)
+as
+begin
+	Delete From Emp where job = pjob;
+end;
+In case of Static SQL run time only execution will happen.
+
+2) Dynamic SQL:
+In dynamic SQL the structure of the SQL statement is not known until runtime.
+Compile time the SQL statement was a simple string, it cannot evaluate.
+So, run time the SQL statement first gets compiled and then gets executed.
+
+create or replace procedure drop_table(ptable_name varchar)
+as
+begin
+	'Drop Table ' || ptable_name;
+end;
+
+
+Exec drop_table ('Transactions');
+
+--------------------------------------------------
+
+
+
+Oracle Packages:
+
+
+In Oracle there are 2 types of Packages:
+1) Oracle Supplied Packages
+2) User Defined Packages
+
+
+User Defined Packages:
+
+There Procedures & Functions can be of 2 types:
+1) Stand alone
+
+2) Package members
+
+1) Stand alone: Owned directly by the Oracle user
+
+Package?
+Package is collection of "Logically related" Variables, PLSQL Records, PLSQL Tables,
+Exceptions, Procedures, Functions and Cursors.
+
+
+Benefits of Packages:
+1) When any member of the package is called for the first time then the entire package gets loaded in the memory. This will eliminate the further disk ios involved when other members are called subsequently.
+Advantage is Performance benefit.
+
+2) We can create "Private" members which CANNOT BE ACCESSED outside the package. They can only get accessed via "Public" members.
+
+3) We can create "Public" members which can be accessed outside the package.
+
+4)  We can create "Reusable" Cursors, Types, Exceptions and Variables.
+
+5)  We can create "Overloaded Procedures & Overloaded Functions".
+
+6)  We can create "One Time Only Procedure".
+
+7) We can achieve "Persistent State of Cursors" for the current session.
+
+8) We can achieve "Persistent State of Public Variables" for the current session.
+
+9) We can provide Execute Privilege to Package itself so that all the PUBLIC Procedures & Functions will be available through that Privilege to users.
+
+How Packages are Created?
+There are 2 objects necessary for creating the package.
+1) Package Specification or sometimes aka Package Header (Similar to Interface)
+And
+2) Package Body   (Similar to Class)
+
+Package Specification needs to be compiled first and then only we can compile the Package Body.
+
+
+Contents of Package Specification are as below:
+1) Declaration of all PUBLIC variables, types, Exceptions (variables of Exception types) and Cursors (Only activeset is declared)
+
+2) Declaration of all PUBLIC Procedures and PUBLIC Functions.
+Declaration means only mention the name, parameters, return types.
+
+
+Contents of Package Body are as below:
+1) Declaration of all PRIVATE  variables, types, Exceptions, Cursors, Procedures & Functions. (Is Optional)
+
+2) Declaration and Definition of all PRIVATE Procedures & Functions.
+Definition means writing the actual code (Begin .... End) (Is Optional)
+
+3) Definitions of all PUBLIC Procedures and PUBLIC Functions which are declared in the Package Specification (Is Mandatory).
+
+4) Definition of "One Time Only Procedure" (Is Optional)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

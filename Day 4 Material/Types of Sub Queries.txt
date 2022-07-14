@@ -1,0 +1,25 @@
+Types of SQ:
+1) Non Correlated or Simple
+2) Correlated 
+-------------------------
+1) Non Correlated or Simple:
+	a) Single Row
+	b) Multi Row
+	c) Multi Column
+		i) Non Pair Wise
+		ii) Pair Wise
+	d) SQ in DML statements
+	e) Nested
+	f) Along with Exists and Not Exists
+-------------------------
+2) Correlated	
+	a) Normal Correlated SQ
+	b) Along with Exists and Not Exists
+
+
+
+
+
+
+
+

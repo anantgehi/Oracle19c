@@ -1,0 +1,14 @@
+When to use Inline Views or Derived Tables:
+
+****1) When a expression or formula is getting used in other expressions or formulae.
+
+****2) When we want to filter records as per the Expression column's alias.
+
+*****3) When there is an complex expression as a Non Aggregate column along with Aggregate column then instead of putting that same complex expression in Group By clause we can use Inline Views or Derived Tables.
+
+*******4) When we have groupable, non groupable, aggregate and expressions columns all together in column list to show summary values along with actual values then create a Inline View or Derived Table which has the "Summary Output". Join it with regular table and filter it if required!
+
+**********5) To perform "Top N Analysis" (OP)
+
+
+
