@@ -1,0 +1,104 @@
+
+
+Arrays in PLSQL:
+
+Arrays in PLSQL are termed as "PLSQL Tables" or also known as "Associate Arrays".
+
+
+--------------------------------------
+
+
+Triggers:
+
+Trigger is a piece of code (like a procedure) which will "implicitly" get executed when any DML / DDL / DCL event occurs.
+Select is NOT an event for trigger to get executed.
+
+
+Procedure cannot be "implicitly" executed.
+Either the procedure has to be "explicitly" called or it has to be "scheduled".
+
+
+Triggers can niether be "explicitly" called nor can be "scheduled".
+
+Benefits of Triggers Or Why Triggers:
+1) To transfer newly inserted rows in the main to another table.
+2) To take an "programmatic" backup of deleted rows and old values before update.
+3) To perform "complex validations" before inserting records which are NOT possible through Check constraints or by PKs.
+4) To set an "programmatic" audit, by which the DML / DDL events can be kept track of.
+5) To provide conditional Access (Insert / Update / Delete) to users based on Date, Day, Time, User basis.
+6) To perform DML on a view which is based on join condition.
+
+Types of Triggers:
+1) Based on Timing:
+	a) Before DML  -- For validation purpose
+	b) After DML   -- For performing other activities like backup, etc.
+	c) Instead of DML -- For Views Only
+
+2) Based on Execution:
+	a) Row Level -- Code gets executed once for every row.
+	b) Statement Level aka Table Level (Default) -- Code gets executed "ONLY ONCE" for that statement, not depending on number of rows affected.
+
+Procedure can be called in 2 ways inside Trigger:
+
+1) In Bodyless Trigger Mention Call Procedure and do not mention ;
+
+OR
+
+2) Inside the Trigger Body
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
